@@ -1,9 +1,13 @@
 @import "tailwindcss";
-
 @import "@catppuccin/tailwindcss/mocha.css";
+
+@theme inline {
+    --font-sans: "Geist Variable", sans-serif;
+    --font-mono: "Geist Mono Variable", monospace;
+}
 
 @layer base {
     body {
-        @apply bg-ctp-base text-ctp-base;
+        @apply bg-ctp-base text-ctp-text;
     }
 }
