@@ -1,7 +1,27 @@
 ---
 import Layout from "../layouts/layout.astro";
+import { Button } from "../components/ui/button";
 ---
 
 <Layout>
-	<h1>Hello World</h1>
+	<div class="flex flex-col gap-5 p-5">
+		<Button className="w-fit">Click me</Button>
+		<Button className="w-fit" variant="secondary">Click me</Button>
+		<Button className="w-fit" variant="ghost">Click me</Button>
+	</div>
+	<div class="flex flex-col gap-5 p-5 macchiato bg-ctp-base">
+		<Button className="w-fit">Click me</Button>
+		<Button className="w-fit" variant="secondary">Click me</Button>
+		<Button className="w-fit" variant="ghost">Click me</Button>
+	</div>
+	<div class="flex flex-col gap-5 p-5 frappe bg-ctp-base">
+		<Button className="w-fit">Click me</Button>
+		<Button className="w-fit" variant="secondary">Click me</Button>
+		<Button className="w-fit" variant="ghost">Click me</Button>
+	</div>
+	<div class="flex flex-col gap-5 p-5 latte bg-ctp-base">
+		<Button className="w-fit">Click me</Button>
+		<Button className="w-fit" variant="secondary">Click me</Button>
+		<Button className="w-fit" variant="ghost">Click me</Button>
+	</div>
 </Layout>

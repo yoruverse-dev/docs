@@ -1,9 +1,14 @@
 @import "tailwindcss";
-@import "@catppuccin/tailwindcss/mocha.css";
 
 @theme inline {
     --font-sans: "Geist Variable", sans-serif;
     --font-mono: "Geist Mono Variable", monospace;
+}
+
+@layer utilities {
+    .brand-gradient-to-br {
+        @apply bg-gradient-to-br from-ctp-lavender-500 via-ctp-mauve-500 to-ctp-peach-500;
+    }
 }
 
 @layer base {

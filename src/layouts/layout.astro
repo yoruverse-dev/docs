@@ -2,6 +2,10 @@
 import "../styles/global.css";
 import "@fontsource-variable/geist";
 import "@fontsource-variable/geist-mono";
+
+type Props = {
+    class?: string;
+};
 ---
 
 <html lang="en">
@@ -13,6 +17,6 @@ import "@fontsource-variable/geist-mono";
         <title>Astro</title>
     </head>
 </html>
-<body class="frappe">
+<body class:list={[Astro.props.class]}>
     <slot />
 </body>
