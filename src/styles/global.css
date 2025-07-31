@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@import "@catppuccin/tailwindcss/mocha.css";
+
+@layer base {
+    body {
+        @apply bg-ctp-base text-ctp-base;
+    }
+}
