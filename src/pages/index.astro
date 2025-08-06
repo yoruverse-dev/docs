@@ -1,27 +1,47 @@
 ---
+import { Circle } from "lucide-react";
+
 import Layout from "../layouts/layout.astro";
-import { Button } from "../components/ui/button";
+import { type ButtonProps, Button } from "../components/ui/button";
+
+const variants: ButtonProps["variant"][] = [
+	"primary",
+	"secondary",
+	"tertiary",
+	"danger",
+];
 ---
 
-<Layout>
-	<div class="flex flex-col gap-5 p-5">
-		<Button className="w-fit">Click me</Button>
-		<Button className="w-fit" variant="secondary">Click me</Button>
-		<Button className="w-fit" variant="ghost">Click me</Button>
-	</div>
-	<div class="flex flex-col gap-5 p-5 macchiato bg-ctp-base">
-		<Button className="w-fit">Click me</Button>
-		<Button className="w-fit" variant="secondary">Click me</Button>
-		<Button className="w-fit" variant="ghost">Click me</Button>
-	</div>
-	<div class="flex flex-col gap-5 p-5 frappe bg-ctp-base">
-		<Button className="w-fit">Click me</Button>
-		<Button className="w-fit" variant="secondary">Click me</Button>
-		<Button className="w-fit" variant="ghost">Click me</Button>
-	</div>
-	<div class="flex flex-col gap-5 p-5 latte bg-ctp-base">
-		<Button className="w-fit">Click me</Button>
-		<Button className="w-fit" variant="secondary">Click me</Button>
-		<Button className="w-fit" variant="ghost">Click me</Button>
-	</div>
+<Layout class="p-5 bg-primary space-y-5 *:p-5">
+	{
+		variants.map((variant) => (
+			<Fragment>
+				{Array.from({ length: 2 }).map((_, i) => (
+					<section
+						class:list={[
+							i === 1 && "dark",
+							"bg-primary flex items-center gap-5 *:w-fit w-fit rounded-3xl",
+						]}
+					>
+						<Button variant={variant}>
+							<Circle size={20} />
+							Button CTA
+							<Circle size={20} />
+						</Button>
+						<Button variant={variant} onlyIcon>
+							<Circle size={20} />
+						</Button>
+						<Button variant={variant} disabled>
+							<Circle size={20} />
+							Button CTA
+							<Circle size={20} />
+						</Button>
+						<Button variant={variant} onlyIcon disabled>
+							<Circle size={20} />
+						</Button>
+					</section>
+				))}
+			</Fragment>
+		))
+	}
 </Layout>
